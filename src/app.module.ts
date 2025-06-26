@@ -15,6 +15,7 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { TubularNgWidgetsModule } from '@tubular/ng-widgets';
+import { CodeInputModule } from 'angular-code-input';
 
 import { AppComponent } from './app/app.component';
 import { TimezoneSelectorComponent } from './timezone-selector/timezone-selector.component';
@@ -44,7 +45,8 @@ import { SafeHtmlPipe } from './svg/svg';
     TieredMenuModule,
     ToastModule,
     TooltipModule,
-    TubularNgWidgetsModule
+    TubularNgWidgetsModule,
+    CodeInputModule
   ],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent]

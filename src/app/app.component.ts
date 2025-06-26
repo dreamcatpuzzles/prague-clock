@@ -12,6 +12,7 @@ import {
   WINTER_SOLSTICE
 } from '@tubular/astronomy';
 import ttime, { DateAndTime, DateTime, Timezone } from '@tubular/time';
+import { CodeInputComponent } from 'angular-code-input';
 import { TzsLocation } from '../timezone-selector/timezone-selector.component';
 import { Globe } from '../globe/globe';
 import { basePath, languageList, localeSuffix, SOUTH_NORTH, specificLocale, WEST_EAST } from '../locales/locale-info';
@@ -233,6 +234,7 @@ export class AppComponent implements OnInit, SettingsHolder, SvgHost {
   bohemianTime = '';
   canEditName = false;
   canSaveName = false;
+  completed = false;
   dawnDuskFontSize = '15px';
   dawnTextOffset: number;
   detailedMechanism = false;
@@ -293,6 +295,7 @@ export class AppComponent implements OnInit, SettingsHolder, SvgHost {
   zoneOffset = '';
 
   @ViewChild('advancedOptions', { static: true }) advancedOptions: AdvancedOptionsComponent;
+  @ViewChild('codeInput') codeInput !: CodeInputComponent;
 
   get filterEcliptic(): string {
     return this.fasterGraphics && (!this.svgFilteringOn || this.playing) ? null : 'url("#filterEcliptic")';
@@ -1058,6 +1061,15 @@ export class AppComponent implements OnInit, SettingsHolder, SvgHost {
     this.inputLength = this.inputName.trim().length;
 
     setTimeout(() => document.getElementById('name-input')?.focus());
+  }
+
+  onCodeCompleted(code: string) {
+    if (code.toUpperCase() === "WIND") {
+      this.completed = true;
+      this.play();
+    } else {
+      this.codeInput.reset();
+    }
   }
 
   inputChanged(evt: any): void {

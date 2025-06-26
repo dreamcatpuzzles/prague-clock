@@ -36,6 +36,7 @@
     "@tubular/ng-widgets": "^2.1.2",
     "@tubular/time": "^3.8.2",
     "@tubular/util": "^4.11.0",
+    "angular-code-input": "^1.6.0",
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",
     "rxjs": "~7.5.0",

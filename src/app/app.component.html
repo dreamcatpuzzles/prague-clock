@@ -47,13 +47,17 @@
     </div> -->
     <!-- <tze-zone-selector [(ngModel)]="zone" [recents]="recentLocations" (clearItem)='clearLocationItem($event)' (clearRecents)="clearRecents()"
         [autofocus]="false" [disabled]="canSaveName" (location)="changeLocation($event)"></tze-zone-selector> -->
-    <div class="button-row time-row">
+    <div class="button-row time-row" *ngIf="completed">
       <p-checkbox [(ngModel)]="trackTime" [binary]="true" [disabled]="playing" id="track-time"
           i18n-label label="Track current time"></p-checkbox><span>&nbsp;&nbsp;</span>
       <button i18n type="button" pButton (click)="setNow()" class="now" [disabled]="trackTime" id="now">Now</button>
       <fa-icon [icon]="faPlay" class="fa-xl" [class.disabled]="playing && playSpeed === NORMAL" (click)="play()"></fa-icon>
       <fa-icon [icon]="faForward" class="fa-xl" [class.disabled]="playing && playSpeed === FAST" (click)="playFast()"></fa-icon>
       <fa-icon [icon]="faStop" class="fa-xl" [class.disabled]="!playing" (click)="stop()"></fa-icon>
+    </div>
+    <div *ngIf="!completed">
+      <label class="code-label">Startup code:</label>
+      <code-input #codeInput [codeLength]="4" (codeCompleted)="onCodeCompleted($event)" [isCharsCode]="true" [initialFocusField]="0"></code-input>
     </div>
     <!-- <div class="button-row">
       <tbw-angle-editor wideSpinner [(ngModel)]="latitude" [disableMobileKeyboard]="suppressOsKeyboard" [disabled]="canSaveName"

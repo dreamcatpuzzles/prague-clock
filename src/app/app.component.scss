@@ -30,11 +30,11 @@ p-toast, p-confirmDialog {
   color: $controls-text;
   display: flex;
   flex-direction: column;
-  font: 14px Arial, sans-serif;
+  font: 18px Arial, sans-serif;
   gap: 4px;
   grid-area: 1 / 2;
   justify-self: end;
-  min-height: 400px;
+  min-height: 240px;
   min-width: 400px;
   padding: 1em 0.5em;
   position: relative;
@@ -227,6 +227,26 @@ p-toast, p-confirmDialog {
       opacity: 0;
       pointer-events: none;
     }
+  }
+
+
+  .code-label {
+    text-align: center;
+    display: block;
+  }
+
+  code-input {
+    --item-spacing: 10px;
+    --item-height: 3em;
+    --item-border: none;
+    --item-border-bottom: 2px solid #dddddd;
+    --item-border-has-value: none;
+    --item-border-bottom-has-value: 2px solid #888888;
+    --item-border-focused: none;
+    --item-border-bottom-focused: 2px solid #809070;
+    --item-shadow-focused: none;
+    --item-border-radius: 0px;
+    --color: #ffffff;
   }
 }
 
