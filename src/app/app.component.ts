@@ -53,7 +53,7 @@ const defaultSettings = {
   background: '#4D4D4D',
   collapsed: false,
   detailedMechanism: false,
-  disableDst: true,
+  disableDst: false,
   eventType: EventType.EQUISOLSTICE,
   fasterGraphics: true,
   isoFormat: false,

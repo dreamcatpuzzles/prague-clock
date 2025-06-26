@@ -39,14 +39,14 @@
       <i class="pi pi-caret-right" (touchstart)="eventClick($event)" (touchend)="eventClick($event)"
           (mousedown)="eventClick($event)" (mouseup)="eventClick($event)" (mouseleave)="eventClick()"></i>
     </div>
-    <div class="button-row">
+    <!-- <div class="button-row">
       <p-checkbox [(ngModel)]="isoFormat" [binary]="true"
           i18n-label label="ISO time format"></p-checkbox>
       <p-checkbox [(ngModel)]="disableDst" [binary]="true" [disabled]="!dstChangeAllowed" id="disable-dst"
           i18n-label label="Disable DST on clock" (onChange)="updateTime(true)"></p-checkbox>
-    </div>
-    <tze-zone-selector [(ngModel)]="zone" [recents]="recentLocations" (clearItem)='clearLocationItem($event)' (clearRecents)="clearRecents()"
-        [autofocus]="false" [disabled]="canSaveName" (location)="changeLocation($event)"></tze-zone-selector>
+    </div> -->
+    <!-- <tze-zone-selector [(ngModel)]="zone" [recents]="recentLocations" (clearItem)='clearLocationItem($event)' (clearRecents)="clearRecents()"
+        [autofocus]="false" [disabled]="canSaveName" (location)="changeLocation($event)"></tze-zone-selector> -->
     <div class="button-row time-row">
       <p-checkbox [(ngModel)]="trackTime" [binary]="true" [disabled]="playing" id="track-time"
           i18n-label label="Track current time"></p-checkbox><span>&nbsp;&nbsp;</span>
@@ -55,12 +55,12 @@
       <fa-icon [icon]="faForward" class="fa-xl" [class.disabled]="playing && playSpeed === FAST" (click)="playFast()"></fa-icon>
       <fa-icon [icon]="faStop" class="fa-xl" [class.disabled]="!playing" (click)="stop()"></fa-icon>
     </div>
-    <div class="button-row">
+    <!-- <div class="button-row">
       <tbw-angle-editor wideSpinner [(ngModel)]="latitude" [disableMobileKeyboard]="suppressOsKeyboard" [disabled]="canSaveName"
           [options]="{ angleStyle: DD, compass: SOUTH_NORTH, decimalPrecision: 1, locale: specificLocale }"></tbw-angle-editor>
       <tbw-angle-editor wideSpinner [(ngModel)]="longitude" [disableMobileKeyboard]="suppressOsKeyboard" [disabled]="canSaveName"
           [options]="{ angleStyle: DDD, compass: WEST_EAST, decimalPrecision: 1, locale: specificLocale }"></tbw-angle-editor>
-    </div>
+    </div> -->
     <div class="time-text" [class.collapsed]="collapsed" [class.track-time]="trackTime">{{timeText}}</div>
 
     <app-advanced-options #advancedOptions></app-advanced-options>
