@@ -1068,7 +1068,10 @@ export class AppComponent implements OnInit, SettingsHolder, SvgHost {
       this.completed = true;
       this.play();
     } else {
+      const codeRow = document.getElementById("code-row");
       this.codeInput.reset();
+      codeRow.classList.add("invalid");
+      setTimeout(() => { codeRow.classList.remove("invalid")}, 250);
     }
   }
 

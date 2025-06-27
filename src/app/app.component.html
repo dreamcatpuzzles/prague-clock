@@ -55,7 +55,7 @@
       <fa-icon [icon]="faForward" class="fa-xl" [class.disabled]="playing && playSpeed === FAST" (click)="playFast()"></fa-icon>
       <fa-icon [icon]="faStop" class="fa-xl" [class.disabled]="!playing" (click)="stop()"></fa-icon>
     </div>
-    <div *ngIf="!completed">
+    <div id="code-row" *ngIf="!completed">
       <label class="code-label">Startup code:</label>
       <code-input #codeInput [codeLength]="4" (codeCompleted)="onCodeCompleted($event)" [isCharsCode]="true" [initialFocusField]="0"></code-input>
     </div>
