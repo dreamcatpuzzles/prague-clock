@@ -1030,10 +1030,7 @@ export class AppComponent implements OnInit, SettingsHolder, SvgHost {
     if (!this.trackTime)
       return;
 
-    this.confirmService.confirm({
-      message: $localize`Turn off "Track current time" so you can edit the time?`,
-      accept: () => this.trackTime = false
-    });
+    this.trackTime = false
   }
 
   private setEventType(eventType: EventType): void {
