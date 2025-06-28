@@ -31,7 +31,7 @@ jobs:
       id: upload
       uses: actions/upload-pages-artifact@v3
       with:
-        path: dist/prague-clock/en-US/
+        path: dist/prague-clock/
         
   deploy:
     # Add a dependency to the build job
