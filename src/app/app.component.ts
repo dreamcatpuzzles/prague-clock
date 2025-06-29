@@ -27,6 +27,8 @@ import { adjustGraphicsForLatitude, initSvgHost, sunlitMoonPath, SvgHost } from 
 import { sizeChanges } from '../main';
 import { Subscription, timer } from 'rxjs';
 
+ttime.initTimezoneLargeAlt();
+
 const { DATE, DATETIME_LOCAL, julianDay, TIME } = ttime;
 
 const CLICK_REPEAT_DELAY = 500;
