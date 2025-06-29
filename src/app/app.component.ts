@@ -72,7 +72,7 @@ const defaultSettings = {
   showInfoPanel: false,
   suppressOsKeyboard: false,
   timing: Timing.MODERN,
-  trackTime: true,
+  trackTime: false,
   translucentEcliptic: false,
   zone: 'Europe/Prague'
 };
@@ -1030,7 +1030,10 @@ export class AppComponent implements OnInit, SettingsHolder, SvgHost {
     if (!this.trackTime)
       return;
 
-    this.trackTime = false
+    this.confirmService.confirm({
+      message: $localize`Turn off "Track current time" so you can edit the time?`,
+      accept: () => this.trackTime = false
+    });
   }
 
   private setEventType(eventType: EventType): void {
