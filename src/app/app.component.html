@@ -57,7 +57,7 @@
     </div>
     <div id="code-row" *ngIf="!completed">
       <label class="code-label">Startup code:</label>
-      <code-input #codeInput [codeLength]="4" (codeCompleted)="onCodeCompleted($event)" [isCharsCode]="true" [initialFocusField]="0" inputType="text"></code-input>
+      <code-input #codeInput [codeLength]="4" (codeCompleted)="onCodeCompleted($event)" [isCharsCode]="true" inputType="text"></code-input>
     </div>
     <!-- <div class="button-row">
       <tbw-angle-editor wideSpinner [(ngModel)]="latitude" [disableMobileKeyboard]="suppressOsKeyboard" [disabled]="canSaveName"
